@@ -3,25 +3,10 @@ package com.example.LocalEnsayo.DTO;
 import java.time.LocalDateTime;
 
 public class BookingDTO {
-    private LocalDateTime dateHour;
-    private int duration;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private Long bandId;
 
-    public LocalDateTime getDateHour() {
-        return dateHour;
-    }
-
-    public void setDateHour(LocalDateTime dateHour) {
-        this.dateHour = dateHour;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
 
     public Long getBandId() {
         return bandId;
@@ -30,4 +15,21 @@ public class BookingDTO {
     public void setBandId(Long bandId) {
         this.bandId = bandId;
     }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
 }
+

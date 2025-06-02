@@ -12,8 +12,9 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime dateHour;
-    private int duration;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
+
 
     @ManyToOne
     @JoinColumn(name = "band_id")
@@ -30,20 +31,20 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalDateTime getDateHour() {
-        return dateHour;
+    public LocalDateTime getStartTime() {
+        return startTime;
     }
 
-    public void setDateHour(LocalDateTime dateHour) {
-        this.dateHour = dateHour;
+    public void setStartTime(LocalDateTime dateHour) {
+        this.startTime = dateHour;
     }
 
-    public int getDuration() {
-        return duration;
+    public LocalDateTime getEndTime() {
+        return endTime;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public Band getBand() {
@@ -58,8 +59,8 @@ public class Booking {
     public String toString() {
         return "Booking{" +
                 "id=" + id +
-                ", dateHour=" + dateHour +
-                ", duration=" + duration +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
                 ", band=" + band +
                 '}';
     }

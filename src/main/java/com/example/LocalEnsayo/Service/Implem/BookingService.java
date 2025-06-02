@@ -23,12 +23,18 @@ public class BookingService implements IBookingService {
 
     @Override
     public Booking createBooking(BookingDTO dto) {
+        boolean overlappingBookingsFound = !bookingRepository.findOverlapingBookings(dto.getStartTime(), dto.getEndTime()).isEmpty();
+
+        if (overlappingBookingsFound){
+            throw new RuntimeException("Booking already exists");
+        }
+
         Band band = bandRepository.findById(dto.getBandId())
                 .orElseThrow(() -> new RuntimeException("Band not found"));
 
         Booking booking = new Booking();
-        booking.setDateHour(dto.getDateHour());
-        booking.setDuration(dto.getDuration());
+        booking.setStartTime(dto.getStartTime());
+        booking.setEndTime(dto.getEndTime());
         booking.setBand(band);
 
         return bookingRepository.save(booking);
