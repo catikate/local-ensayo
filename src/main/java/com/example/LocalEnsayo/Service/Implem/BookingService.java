@@ -37,7 +37,9 @@ public class BookingService implements IBookingService {
         booking.setEndTime(dto.getEndTime());
         booking.setBand(band);
 
-        return bookingRepository.save(booking);
+        bookingRepository.save(booking);
+
+        return booking;
     }
 
     @Override
