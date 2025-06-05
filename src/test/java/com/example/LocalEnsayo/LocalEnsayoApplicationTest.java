@@ -83,5 +83,4 @@ class LocalEnsayoApplicationTest {
 
 		assertThrowsExactly(RuntimeException.class, () -> bookingService.createBooking(new BookingDTO()));
 	}
-
 }
